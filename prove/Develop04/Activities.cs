@@ -38,12 +38,6 @@ public class Activities
             i++;
         }
     }
-    
-    //! this is not needed for all the activirys 
-    public void RandomPrompt()
-    {
-        // TODO
-    }
 
     public void setTime(int time) {
         _time = time;
