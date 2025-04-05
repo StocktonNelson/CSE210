@@ -4,17 +4,16 @@ public class Word
     private bool _isHidden;
     private Random _rand = new Random();
 
-    private List<String> _OgText; //* added for show() function
-
     public Word(string text)
     {
         this._text = text.Split().ToList();
         this._isHidden = false;
-        this._OgText = text.Split().ToList();
     }
 
     public void Hide()
     {
+        // TODO: Hide the word
+
         if (!IsHidden())
         {
             // grabs the word
@@ -30,7 +29,7 @@ public class Word
                     _isHidden = true;
                     break;
                 }
-                else if (_text[index].Contains("_"))
+                else if (_text[index].Contains("_")) 
                 {
                     continue;
                 }
@@ -38,6 +37,7 @@ public class Word
                 {
                     break;
                 }
+
             }
 
             string word = _text[index];
@@ -45,16 +45,18 @@ public class Word
             //makes hidden word replacemnt
             int length = word.Length;
             string hiddenWord = new string('_', length);
+
+
             _text[index] = hiddenWord;
+
 
         }
     }
 
 
-    public void Show() //* some but but mostly works
+    public void Show() //! idk what this mean bu hope im using it right
     {
-        _text = new List<string>(_OgText); // just us og text to take back to it origianl text.
-        _isHidden = false;
+        // TODO: Show the word
         Console.WriteLine(GetRenderedText());
     }
 
